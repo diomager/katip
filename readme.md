@@ -22,3 +22,24 @@ Internally, Katip uses [Git](https://git-scm.com) to record, store, retrieve, an
 
 The problem is that when the computer is restarted, the application will not continue watching the folder specified. At first, this will be documented, but later this will be improved by starting the application when the computer starts.
 
+## Command line Interface
+NAME:
+   Katip - Micro backups with historical changes
+
+USAGE:
+   main.exe [global options] command [command options] [arguments...]
+
+VERSION:
+   0.0.1
+
+COMMANDS:
+   watch, w    Starts a new watch. By default, it commits changes to the history as any change occurs, and folder path is the current directory.
+   stop, s     Stops the watch.
+   destroy, d  Destroys all the history recorded. It also stops the application if it is still running.
+   pause, p    Pauses the app.
+   resume, d   Resumes the app with all the arguments passed initially when the app was first started.
+   help, h     Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --help, -h     show help
+   --version, -v  print the version
