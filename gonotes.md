@@ -18,7 +18,7 @@ func main(){
 
 ## Creating a new error
 
-You can eitehr implement your new `struct` that satisfies an `error` interface or use `errors.New("error message")` to return a new one easily.
+You can either implement your new `struct` that satisfies an `error` interface or use `errors.New("error message")` to return a new one easily.
 
 ```
 type MyError string;

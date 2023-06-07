@@ -6,7 +6,6 @@ import (
 	"github.com/fsnotify/fsnotify"
 	"github.com/tarikguney/katip/common"
 	"github.com/tarikguney/katip/git"
-	"io/ioutil"
 	"log"
 	"os"
 	"os/exec"
@@ -30,7 +29,7 @@ func runWatchCommand() (success bool, err error) {
 	watcher, err := fsnotify.NewWatcher()
 
 	// Remove all files under .katip-repo from watcher list.
-	// todo Continously ignore .katip-repo files as you commit, otherwise it enters an infinite-loop.
+	// todo Continuously ignore .katip-repo files as you commit, otherwise it enters an infinite-loop.
 	_ = filepath.Walk(".katip-repo", func(path string, info os.FileInfo, err error) error {
 		if err != nil{
 			return err
@@ -88,5 +87,5 @@ func runWatchCommand() (success bool, err error) {
 
 func writeGitIgnore() {
 	var ignoreKatipRepo = ".katip-repo/*"
-	_ = ioutil.WriteFile(".gitignore", []byte(ignoreKatipRepo), 0644)
+	_ = os.WriteFile(".gitignore", []byte(ignoreKatipRepo), 0644)
 }
