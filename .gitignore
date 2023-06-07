@@ -1,1 +1,4 @@
 .idea/*
+
+# ignore executable file
+*.exe
